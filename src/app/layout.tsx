@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,6 +9,8 @@ export const metadata: Metadata = {
   description: "More株式会社",
 };
 
+const isDev = process.env.NEXT_PUBLIC_IS_DEV === "true";
+
 export default function RootLayout({
   children,
 }: {
@@ -17,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="jp">
+      <head>{isDev && <meta name="robots" content="noindex, nofollow" />}</head>
       <body className={inter.className}>{children}</body>
     </html>
   );
