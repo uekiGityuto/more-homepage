@@ -1,5 +1,10 @@
 import type { Config } from "tailwindcss";
 
+const COLORS = {
+  "primary-100": "#F39C12",
+  "secondary-100": "#1B4881",
+};
+
 const config: Config = {
   darkMode: "class",
   content: [
@@ -11,7 +16,9 @@ const config: Config = {
     fontFamily: {
       sans: ["var(--font-noto-sans-jp)"],
     },
-    extend: {},
+    extend: {
+      colors: COLORS,
+    },
   },
   variants: {
     extend: {},
