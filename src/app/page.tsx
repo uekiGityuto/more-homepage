@@ -1,4 +1,4 @@
-import { Overview } from "@/features/Overview";
+import { Overview } from "@/components/Overview";
 
 export default function Home() {
   return (
