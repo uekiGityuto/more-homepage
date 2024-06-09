@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/layout/Header";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -16,17 +16,13 @@ export const metadata: Metadata = {
 
 const isDev = process.env.NEXT_PUBLIC_IS_DEV === "true";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={clsx(notoSansJP.variable, "font-sans")}>
       <head>{isDev && <meta name="robots" content="noindex, nofollow" />}</head>
       <body>
         <Header />
-        {children}
+        <main>{props.children}</main>
       </body>
     </html>
   );
