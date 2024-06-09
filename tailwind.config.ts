@@ -11,12 +11,7 @@ const config: Config = {
     fontFamily: {
       sans: ["var(--font-noto-sans-jp)"],
     },
-    extend: {
-      colors: {
-        background: "#000",
-        text: "#fff",
-      },
-    },
+    extend: {},
   },
   variants: {
     extend: {},
