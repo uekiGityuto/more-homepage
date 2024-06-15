@@ -1,27 +1,24 @@
-import heroPcImgSrc from "./images/hero_pc.png";
-import heroSpImgSrc from "./images/hero_sp.png";
+import { H2 } from "@/components/atoms/Typography";
 
-const Hero = () => {
-  return (
-    <div className="w-full">
-      <div className="block md:hidden">
-        <img
-          src={heroSpImgSrc.src}
-          alt="More株式会社多くの人の「もっと」を実現する。"
-          className="object-cover w-full"
-        />
-      </div>
-      <div className="hidden md:block">
-        <img
-          src={heroPcImgSrc.src}
-          alt="More株式会社多くの人の「もっと」を実現する。"
-          className="object-cover w-full"
-        />
-      </div>
-    </div>
-  );
-};
+const DATA = [
+  { label: "企業名", value: "More株式会社" },
+  { label: "設立", value: "2024年3月6日" },
+  { label: "資本金", value: "100万円" },
+  { label: "代表者", value: "山川宥登" },
+];
 
-export const Overview = () => {
-  return <Hero />;
-};
+export const Overview = () => (
+  <section>
+    <H2 text="Overview" />
+    <table>
+      <tbody>
+        {DATA.map((data) => (
+          <tr key={data.label}>
+            <th className="p-2 font-normal">{data.label}</th>
+            <td className="p-2">{data.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+);
