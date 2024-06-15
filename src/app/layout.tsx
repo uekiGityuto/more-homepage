@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -20,9 +21,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={clsx(notoSansJP.variable, "font-sans")}>
       <head>{isDev && <meta name="robots" content="noindex, nofollow" />}</head>
-      <body>
+      <body className="min-h-screen flex flex-col">
         <Header />
-        <main>{props.children}</main>
+        <main className="flex-1">{props.children}</main>
+        <Footer />
       </body>
     </html>
   );

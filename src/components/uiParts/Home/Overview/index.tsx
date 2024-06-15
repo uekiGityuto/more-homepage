@@ -5,6 +5,7 @@ const DATA = [
   { label: "設立", value: "2024年3月6日" },
   { label: "資本金", value: "100万円" },
   { label: "代表者", value: "山川宥登" },
+  // TODO: 問い合わせ先の情報を追加する
 ];
 
 export const Overview = () => (
@@ -14,7 +15,7 @@ export const Overview = () => (
       <tbody>
         {DATA.map((data) => (
           <tr key={data.label}>
-            <th className="p-2 font-normal">{data.label}</th>
+            <th className="p-2 font-normal text-left">{data.label}</th>
             <td className="p-2">{data.value}</td>
           </tr>
         ))}
