@@ -3,9 +3,8 @@ import type { Config } from "tailwindcss";
 const COLORS = {
   "link-100": "#0277BD",
   "primary-100": "#F39C12",
-  "primary-50": "#98C3E3",
-  "primary-10": "#FBFCFE",
   "secondary-100": "#1B4881",
+  "secondary-10": "#FBFCFE",
 };
 
 const config: Config = {

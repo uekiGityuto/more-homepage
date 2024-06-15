@@ -20,7 +20,10 @@ const isDev = process.env.NEXT_PUBLIC_IS_DEV === "true";
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={clsx(notoSansJP.variable, "font-sans")}>
-      <head>{isDev && <meta name="robots" content="noindex, nofollow" />}</head>
+      <head>
+        {isDev && <meta name="robots" content="noindex, nofollow" />}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{props.children}</main>
