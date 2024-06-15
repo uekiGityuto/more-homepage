@@ -1,18 +1,20 @@
 import type { Config } from "tailwindcss";
 
+const COLORS = {
+  "link-100": "#0277BD",
+  "primary-100": "#F39C12",
+  "secondary-100": "#1B4881",
+  "secondary-10": "#FBFCFE",
+};
+
 const config: Config = {
-  darkMode: "class",
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    fontFamily: {
+      sans: ["var(--font-noto-sans-jp)"],
+    },
     extend: {
-      colors: {
-        background: "#000",
-        text: "#fff",
-      },
+      colors: COLORS,
     },
   },
   variants: {
