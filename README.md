@@ -16,6 +16,7 @@ More 株式会社のコーポレートサイトです。
 ## 開発環境のセットアップ
 
 ### 必要な環境
+
 - npm
 
 ### インストール
@@ -63,28 +64,34 @@ src/
 
 ### Cloudflare Pages
 
-本プロジェクトはCloudflare Pagesでホストされています。
+本プロジェクトは Cloudflare Pages でホストされています。
+
+https://dash.cloudflare.com/3db9714dff3804165edd0f6c67c918a7/pages/view/more-homepage
 
 #### デプロイフロー
+
 - **開発環境**: `dev`ブランチへのプッシュ/マージ → 開発環境へ自動デプロイ
 - **本番環境**: `main`ブランチへのプッシュ/マージ → 本番環境へ自動デプロイ
 
 #### ビルド設定
+
 - **フレームワークプリセット**: Next.js
 - **ビルドコマンド**: `npm run build`
 - **ビルド出力ディレクトリ**: `.next`
 
 ### 環境変数
 
-環境変数はCloudflare Pagesの管理画面で設定します。
+環境変数は Cloudflare Pages の管理画面で設定します。
 
-#### Production環境
+#### Production 環境
+
 ```
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # GA4のMeasurement ID
 NEXT_PUBLIC_IS_DEV=false        # 本番環境フラグ
 ```
 
-#### Preview環境（dev）
+#### Preview 環境（dev）
+
 ```
 NEXT_PUBLIC_GA_ID=（任意）       # 未設定またはダミー値
 NEXT_PUBLIC_IS_DEV=true         # 開発環境フラグ（noindexタグ有効）
@@ -109,4 +116,4 @@ NEXT_PUBLIC_IS_DEV=true         # 開発フラグ
 
 ## ライセンス
 
-© 2024 More株式会社. All rights reserved.
+© 2024 More 株式会社. All rights reserved.
