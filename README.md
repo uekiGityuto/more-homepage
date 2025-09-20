@@ -10,7 +10,7 @@ More 株式会社のコーポレートサイトです。
   - TailwindCSS
   - tailwind-variants
 - **フォント**: Noto Sans JP (Google Fonts)
-- **アナリティクス**: Google Analytics 4
+- **アナリティクス**: Google Tag Manager + Google Analytics 4
 - **デプロイ**: Cloudflare Pages
 
 ## 開発環境のセットアップ
@@ -86,14 +86,14 @@ https://dash.cloudflare.com/3db9714dff3804165edd0f6c67c918a7/pages/view/more-hom
 #### Production 環境
 
 ```
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # GA4のMeasurement ID
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX  # GTMコンテナID
 NEXT_PUBLIC_IS_DEV=false        # 本番環境フラグ
 ```
 
 #### Preview 環境（dev）
 
 ```
-NEXT_PUBLIC_GA_ID=（任意）       # 未設定またはダミー値
+NEXT_PUBLIC_GTM_ID=（任意）       # 未設定または同じGTM ID
 NEXT_PUBLIC_IS_DEV=true         # 開発環境フラグ（noindexタグ有効）
 ```
 
@@ -103,7 +103,7 @@ NEXT_PUBLIC_IS_DEV=true         # 開発環境フラグ（noindexタグ有効）
 
 ```bash
 # .env.local
-NEXT_PUBLIC_GA_ID=              # GA4測定ID（省略可）
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX  # GTMコンテナID
 NEXT_PUBLIC_IS_DEV=true         # 開発フラグ
 ```
 
