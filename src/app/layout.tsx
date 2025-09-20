@@ -4,7 +4,7 @@ import "./globals.css";
 import clsx from "clsx";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const isDev = process.env.NEXT_PUBLIC_IS_DEV === "true";
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -27,7 +27,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen flex flex-col">
-        {!isDev && gaId && <GoogleAnalytics gaId={gaId} />}
+        {!isDev && gtmId && <GoogleTagManager gtmId={gtmId} />}
         <Header />
         <main className="flex-1">{props.children}</main>
         <Footer />
